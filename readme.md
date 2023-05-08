@@ -9,8 +9,8 @@ directory of
 
 The files consist of:
 
-1. [spacyNER.py](/scripts/pos_ner/python/huggingface/huggingface.py): Runs ntlk on a corpus, outputing a .json file with POS and NER for all the words in your corpus.
-2. [spacyNER.sbatch](/scripts/pos_ner/python/huggingface/huggingface.sbatch): Creates a batch job for spacyNER.py.
+1. [spacyNER.py](huggingface.py): Runs ntlk on a corpus, outputing a .json file with POS and NER for all the words in your corpus.
+2. [spacyNER.sbatch](huggingface.sbatch): Creates a batch job for spacyNER.py.
 
 ## Usage instructions
 
@@ -31,21 +31,14 @@ ssh yourSUNetID@sherlock.stanford.edu
 ```
 ### File Management
 
-3. Once you are logged in, you'll want to have access to these files, which you can get with a couple simple commands. First, we need to install a program called subversion:
+3. Once we're logged on, we want to put these files on Sherlock:
+```bash
+git clone https://github.com/bcritt1/pos_ner_python_huggingface.git
 ```
-ml system subversion
-```
-and use that program to download the files:
-```
-svn export https://github.com/bcritt1/H-S-Documentation/trunk/scripts/pos_ner/python/huggingface/ huggingface
-```
-This will create a directory in your home space on Sherlock called "nltk" with all the files in this repository.
+This will create a directory in your home space on Sherlock called "pos_ner_python_huggingface" with all the files in this repository.
 
 Once you have the directory--you can ```ls``` to verify it's there--
 ```
-ml purge
-```
-to remove subversion from your environment. 
 
 3. Let's also make three directories for the outputs of our process:
 ```
