@@ -40,13 +40,13 @@ This will create a directory in your home space on Sherlock called "pos_ner_pyth
 Once you have the directory--you can ```ls``` to verify it's there--
 ```
 
-3. Let's also make three directories for the outputs of our process:
+4. Let's also make three directories for the outputs of our process:
 ```
 mkdir out err /scratch/users/$USER/outputs
 ```
 ### Running Code
 
-4. Now, let's move into our new directory
+5. Now, let's move into our new directory
 ```
 cd huggingface
 ```
