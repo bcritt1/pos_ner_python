@@ -38,7 +38,6 @@ git clone https://github.com/bcritt1/pos_ner_python_huggingface.git
 This will create a directory in your home space on Sherlock called "pos_ner_python_huggingface" with all the files in this repository.
 
 Once you have the directory--you can ```ls``` to verify it's there--
-```
 
 4. Let's also make three directories for the outputs of our process:
 ```
