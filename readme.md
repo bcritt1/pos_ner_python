@@ -9,8 +9,8 @@ directory of
 
 The files consist of:
 
-1. [spacyNER.py](huggingface.py): Runs ntlk on a corpus, outputing a .json file with POS and NER for all the words in your corpus.
-2. [spacyNER.sbatch](huggingface.sbatch): Creates a batch job for spacyNER.py.
+1. [huggingface.py](huggingface.py): Runs ntlk on a corpus, outputing a .json file with POS and NER for all the words in your corpus.
+2. [huggingface.sbatch](huggingface.sbatch): Creates a batch job for huggingface.py.
 
 ## Usage instructions
 
@@ -19,14 +19,14 @@ The files consist of:
 1. Before we log onto Sherlock, let's make sure we're going to have everything we need there and move inputs/corpus onto Sherlock. For info on transferring data to Sherlock, see:
 [https://www.sherlock.stanford.edu/docs/storage/data-transfer/](https://www.sherlock.stanford.edu/docs/storage/data-transfer/). [rsync](https://www.sherlock.stanford.edu/docs/storage/data-transfer/#rsync) is probably the best program for
 this, but if you prefer another, go with that. For rsync, you'd use the command 
-``` 
+```bash
 rsync -a ~/path/to/local/data yourSUNetid@login.sherlock.stanford.edu:/scratch/users/$USER/corpus/
 ```
 You'll need to tweak the local path because I don't know where your files are located, but the remote path (after the ":") should work fine to get your corpus into scratch, a fast storage system where it's best to do file 
 reading/writing.
 
 2. Now we can log onto Sherlock using ssh in the Terminal program on Mac[^1]. with the syntax: 
-```
+```bash
 ssh yourSUNetID@sherlock.stanford.edu
 ```
 ### File Management
@@ -37,16 +37,14 @@ git clone https://github.com/bcritt1/pos_ner_python_huggingface.git
 ```
 This will create a directory in your home space on Sherlock called "pos_ner_python_huggingface" with all the files in this repository.
 
-Once you have the directory--you can ```ls``` to verify it's there--
-
 4. Let's also make three directories for the outputs of our process:
-```
+```bash
 mkdir out err /scratch/users/$USER/outputs
 ```
 ### Running Code
 
 5. Now, let's move into our new directory
-```
+```bash
 cd huggingface
 ```
 and submit our sbatch file to slurm, Sherlock's job scheduler: 
